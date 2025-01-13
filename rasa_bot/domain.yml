@@ -1,0 +1,70 @@
+version: "3.1"
+
+intents:
+  - greet
+  - ask_product
+  - ask_price
+  - close_deal
+  - goodbye
+  - mood_great 
+
+responses:
+  utter_greet:
+    - text: "Hello! I'm an AI sales agent. How can I assist you today?"
+    - text: "Hi there! Thanks for reaching out. What can I help you with?"
+  
+  utter_product_info:
+    - text: "We offer a range of innovative AI-powered solutions for businesses. Our flagship product is an AI customer service automation platform."
+    - text: "Our main product is an AI platform that helps businesses automate their customer service operations efficiently."
+  
+  utter_price_info:
+    - text: "Our pricing starts at $99/month for the basic package. Would you like me to explain the different tiers?"
+    - text: "We have several pricing tiers starting from $99/month. Shall I walk you through the options?"
+  
+  utter_close_deal:
+    - text: "Great choice! I'll help you get started with the purchase process. First, could you tell me which package interests you?"
+    - text: "Excellent! Let's proceed with setting up your account. Which plan would you like to go with?"
+  
+  utter_goodbye:
+    - text: "Thanks for your time! Have a great day."
+    - text: "Thank you for your interest. Feel free to reach out if you have any questions!"
+
+  utter_happy:  # Added
+    - text: "I'm glad to hear that!"
+    - text: "That's great to hear!"
+
+actions:
+  - utter_greet
+  - utter_product_info
+  - utter_price_info
+  - utter_close_deal
+  - utter_goodbye
+  - utter_happy
+
+entities:
+  - product
+  - price
+  - deal
+
+slots:
+  product:
+    type: text
+    mappings:
+      - type: from_text
+
+  price:
+    type: text
+    mappings:
+      - type: from_text
+
+  deal:
+    type: text
+    mappings:
+      - type: from_text
+
+forms:
+  deal_form:
+    required_slots:
+      - product
+      - price
+      - deal

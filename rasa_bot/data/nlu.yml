@@ -1,0 +1,65 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+    - hi there
+    - greetings
+
+- intent: ask_product
+  examples: |
+    - what products do you have
+    - tell me about your products
+    - what are you selling
+    - what can I buy
+    - show me your products
+    - what's available
+    - what do you offer
+    - what services do you provide
+
+- intent: ask_price
+  examples: |
+    - how much does it cost
+    - what's the price
+    - tell me about pricing
+    - what are your rates
+    - is it expensive
+    - give me a quote
+    - price details please
+
+- intent: close_deal
+  examples: |
+    - I want to buy it
+    - let's make a deal
+    - I'll take it
+    - I'd like to purchase
+    - sign me up
+    - where do I pay
+    - how do I proceed with the purchase
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you around
+    - see you later
+    - have a good day
+    - talk to you later
+
+- intent: mood_great
+  examples: |
+    - I'm doing great
+    - feeling awesome
+    - fantastic
+    - couldn't be better
+    - I'm good
+    - I'm happy
+    - all good
+    - doing well

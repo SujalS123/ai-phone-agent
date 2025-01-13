@@ -1,0 +1,34 @@
+version: "3.1"
+
+stories:
+- story: happy path
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_great
+    - action: utter_happy
+
+- story: Greet user
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- story: Provide product info
+  steps:
+    - intent: ask_product
+    - action: utter_product_info
+
+- story: Ask price
+  steps:
+    - intent: ask_price
+    - action: utter_price_info
+
+- story: Close deal
+  steps:
+    - intent: close_deal
+    - action: utter_close_deal
+
+- story: Goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
