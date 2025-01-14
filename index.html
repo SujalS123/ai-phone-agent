@@ -55,7 +55,7 @@
         <h1>Call to a customer</h1>
         <p>Enter your phone number to receive a call:</p>
         <input type="text" id="phoneNumber" placeholder="Enter phone number" />
-        <button onclick="makeCall()">Get Call</button>
+        <button onclick="makeCall()">Call</button>
         <p id="status"></p>
     </div>
 
@@ -71,7 +71,7 @@
             }
 
             try {
-                const response = await fetch('http://localhost:5000/make_call', {
+                const response = await fetch('https://ai-phone-agent.vercel.app/make_call', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ phone: phoneNumber })

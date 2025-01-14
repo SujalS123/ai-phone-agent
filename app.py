@@ -11,7 +11,7 @@ from rasa.core.agent import Agent
 import asyncio
 
 
-BASE_URL = 'https://b452-110-5-74-38.ngrok-free.app'
+BASE_URL = 'https://ai-phone-agent.vercel.app'
 
 rasa_agent = None
 
@@ -120,8 +120,8 @@ def voice_response():
 
     # Generate TTS Audio
     audio_file = synthesize_speech(message)
-    if audio_file:
-        audio_url = f'     https://b452-110-5-74-38.ngrok-free.app/static/output.mp3'
+    if (audio_file):
+        audio_url = f'{BASE_URL}/static/output.mp3'
         logger.info(f"Playing audio from: {audio_url}")
         response.play(audio_url)
     else:
