@@ -23,6 +23,7 @@ AI Phone Agent is an interactive, voice-based chatbot designed for customer inte
 
 ## Project Structure
 
+```plaintext
 ai-phone-agent/
 ├── rasa_bot/           # Rasa chatbot setup
 ├── web/                # Web interface
@@ -30,7 +31,7 @@ ai-phone-agent/
 ├── requirements.txt    # Python dependencies
 ├── README.md           # Project documentation
 └── .env                # Environment variables (not included in repo)
----
+```
 
 
 ---
@@ -69,4 +70,3 @@ Contributions are welcome! Please follow these steps:
 - Rasa for enabling dynamic conversations.
 - Twilio for seamless telephony integration.
 - Vercel for easy and scalable deployment.
-
