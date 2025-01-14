@@ -11,9 +11,8 @@ from rasa.core.agent import Agent
 import asyncio
 
 
-BASE_URL = '  https://b452-110-5-74-38.ngrok-free.app '
+BASE_URL = 'https://b452-110-5-74-38.ngrok-free.app'
 
-# Load Rasa agent
 rasa_agent = None
 
 async def load_agent():
@@ -91,19 +90,26 @@ def index():
 
 
 # Make Call Route
-@app.route("/make_call", methods=['POST'])
-def make_call():
-    to_number = request.form.get('to')
-    if not to_number:
-        return "Phone number is missing", 400
+ 
 
-    webhook_url = request.form.get('webhook_url', '     https://b452-110-5-74-38.ngrok-free.app/voice')
-    call = client.calls.create(
-        to=to_number,
-        from_=TWILIO_PHONE_NUMBER,
-        url=webhook_url
-    )
-    return f"Call initiated: {call.sid}"
+@app.route('/make_call', methods=['POST'])
+def make_call():
+    data = request.get_json()
+    phone_number = data.get('phone')
+
+    if not phone_number:
+        return jsonify({"error": "Phone number is required!"}), 400
+
+    try:
+        call = client.calls.create(
+            twiml='<Response><Say>Hello! This is a test call from your Twilio app.</Say></Response>',
+            to=phone_number,
+            from_=TWILIO_PHONE_NUMBER
+        )
+        return jsonify({"message": "Call initiated", "call_sid": call.sid}), 200
+    except Exception as e:
+        print(f"Error: {e}")
+        return jsonify({"error": str(e)}), 500
 
 
 # Voice Route (TTS + Record)
