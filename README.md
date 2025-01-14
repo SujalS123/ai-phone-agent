@@ -30,6 +30,7 @@ ai-phone-agent/
 ├── requirements.txt    # Python dependencies
 ├── README.md           # Project documentation
 └── .env                # Environment variables (not included in repo)
+---
 
 
 ---
