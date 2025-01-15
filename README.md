@@ -55,15 +55,7 @@ ai-phone-agent/
 - **Analytics Dashboard**: Track call logs and user interactions.
 - **Automated Testing**: Add unit tests for Rasa and Flask components.
 
----
-
-## Contribution
-Contributions are welcome! Please follow these steps:
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Submit a pull request with a detailed explanation.
-
-
+ 
 ---
 
 ## Acknowledgments
